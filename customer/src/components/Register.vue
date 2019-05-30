@@ -1,11 +1,19 @@
 <template>
   <div class="hello">
     <h1>Register</h1>
-    <input type="email" name="email" v-model="email" placeholder="email">
+    <input type="username" name="username" v-model="username" placeholder="username">
     <br>
     <input type="password" name="password" v-model="password" placeholder="password">
     <br>
-    <button @click="register">Register</button>
+    <input type="email" name="email" v-model="email" placeholder="email">
+    <br>
+    <input type="city" name="city" v-model="city" placeholder="city">
+    <br>
+    <input type="firstName" name="firstName" v-model="fristName" placeholder="firstName">
+    <br>
+    <input type="lastName" name="lastName" v-model="lastName" placeholder="lastName">
+    <br>
+    <button @click="customer">Register</button>
   </div>
 </template>
 
@@ -15,15 +23,25 @@ export default {
   
   data () {
     return {
+      username: '',
+      password: '',
       email: '',
-      password: ''
+      city: '',
+      firstName: '',
+      lastName: '',
     }
   },
   methods: {
-    register(){
-     CustomerRegister.register({
+    customer(){
+     CustomerRegister.customer({
+        username: this.username,
+        password: this.password,
         email: this.email,
-        password: this.password
+        city: this.city,
+        firstName: this.firstName,
+        lastName: this.lastName
+        
+
       })
       console.log('register button was clicked', this.email, this.password)
     }

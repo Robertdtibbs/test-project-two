@@ -30,17 +30,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         firstName: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 160]
-            }
+            allowNull: false
         },
         lastName: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 160]
-            }
+            allowNull: false
         }
     });
     return Customer;
